@@ -27,11 +27,11 @@ The systemd service is configured to:
 
 1.  **clone/download the Script and Systemd Service File:**
     ```bash
-    git clone
+    git clone https://github.com/wusshit/Dummy-System-Service.git
     ```
 2.  **Make it executablee:**
     ```bash
-    sudo nano /etc/systemd/system/dummy.service
+    chomod +x dummy.service
     ```
 
 ## Usage
