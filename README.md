@@ -29,9 +29,9 @@ The systemd service is configured to:
     ```bash
     git clone https://github.com/wusshit/Dummy-System-Service.git
     ```
-2.  **Make it executablee:**
+2.  **Make it executable:**
     ```bash
-    chomod +x dummy.service
+    chomod +x dummy.sh
     ```
 
 ## Usage
@@ -62,7 +62,11 @@ Use standard `systemctl` commands to manage the `dummy` service:
     ```bash
     sudo systemctl disable dummy
     ```
-
+*   **Reload systemd unit files:**
+    ```bash
+    sudo systemctl daemon-reload
+    ```
+    
 ## Logging
 
 You can monitor the service's output in two ways:
