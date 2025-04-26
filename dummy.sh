@@ -1,11 +1,12 @@
 #!/bin/bash
 # dummy.sh - Simple script that prints a message periodically to stdout
+LOG_FILE="/var/log/dummy-service.log"
 
 echo "Dummy service script starting..." # Log startup
 
 while true; do
   # Print a timestamped message to standard output
-  echo "$(date '+%Y-%m-%d %H:%M:%S') - Dummy service is running..." >> "/usr/local/bin/dummy-service.log" 
+  echo "$(date '+%Y-%m-%d %H:%M:%S') - Dummy service is running..." >> "${LOG_FILE}" 
 
 
   # Wait for 10 seconds
