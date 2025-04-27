@@ -18,7 +18,7 @@ The systemd service is configured to:
 ## Files
 
 1.  **`dummy.sh`**: The background script that runs indefinitely.
-    *   **Location:** `/usr/local/bin/dummy.sh` (or adjust path in service file if placed elsewhere)
+    *   **Location:** `/usr/local/bin/dummy.sh`
     *   **Function:** Writes a timestamped "Dummy service is running..." message to `/var/log/dummy-service.log` every 10 seconds.
 2.  **`dummy.service`**: The systemd unit file that defines how to manage `dummy.sh`.
     *   **Location:** `/etc/systemd/system/dummy.service`
@@ -72,7 +72,7 @@ Use standard `systemctl` commands to manage the `dummy` service:
 You can monitor the service's output in two ways:
 
 1.  **Systemd Journal (Recommended):**
-    View the logs captured by systemd (includes stdout/stderr from the script if `StandardOutput=journal` and `StandardError=journal` are set in the service file).
+    View the logs captured by systemd (includes stdout/stderr from the script as `StandardOutput=journal` and `StandardError=journal` are set in the service file).
     ```bash
     # View all logs for the service
     sudo journalctl -u dummy
@@ -118,7 +118,7 @@ The steps to slove it generally are:
      
 3.   **Fix Contexts:** If you moved files from a location with a different context (like your home directory), use `restorecon` to apply the correct default context based on the standard path you moved them to.
 4.   **Test the Service:** See if it works now.
-5.   **Adjust SELinux Policy (if Step 3 fails due to SELinux):** If standard permissions, paths, and default contexts are correct, but the action is still denied, check audit.log for SELinux denials (AVC denied). Use `audit2allow` or check relevant booleans (`getsebool -a | grep <something_relevant>`) to explicitly allow the required interaction between the contexts involved.
+5.   **Adjust SELinux Policy:** If standard permissions, paths, and default contexts are correct, but the action is still denied, check audit.log for SELinux denials (AVC denied). Use `audit2allow` or check relevant booleans (`getsebool -a | grep <something_relevant>`) to explicitly allow the required interaction between the contexts involved.
 
 ## Removal
 1.   **Stop the Service:** Ensure the process is no longer running.
