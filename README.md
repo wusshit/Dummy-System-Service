@@ -12,8 +12,8 @@ The systemd service is configured to:
 
 ## Prerequisites
 
-*   A Linux system using `systemd` (common in modern distributions like Ubuntu, Debian, CentOS, Fedora, Arch Linux, etc.).
-*   Root or `sudo` privileges to create files in system directories and manage systemd services.
+*   A Linux system using `systemd`
+*   `sudo` privilege granted
 
 ## Files
 
