@@ -31,7 +31,7 @@ The systemd service is configured to:
     ```
 2.  **Make it executable:**
     ```bash
-    chomod +x dummy.sh
+    chmod +x dummy.sh
     ```
 
 ## Usage
